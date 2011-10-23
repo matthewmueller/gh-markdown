@@ -4,7 +4,7 @@ Simple markdown to html command-line tool. Uses github-flavored-markdown.
 
 ## Usage
 
-Compile `intro.md`, `body.md`, `outro.md` and place into `index.html`:
+Compile and merge intro.md, body.md, outro.md then place into index.html:
 
 `markdown intro.md body.md outro.md > index.html`
 
