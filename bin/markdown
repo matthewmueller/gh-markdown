@@ -3,8 +3,6 @@
 var program = require('commander'),
 	markdown = require('../');
 
-
-
 program
 	.version('0.0.2');
 	
