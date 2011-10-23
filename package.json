@@ -2,13 +2,14 @@
   "author": "Matt Mueller <mattmuelle@gmail.com>",
   "name": "gh-markdown",
   "description": "Quick & Dirty github-flavored command-line application",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "url": ""
   },
   "engines": {
     "node": "0.4.x"
   },
+  "main" : "./index.js",
   "bin": {
     "markdown" : "./bin/markdown"
   },
