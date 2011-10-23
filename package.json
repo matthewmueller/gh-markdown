@@ -1,0 +1,20 @@
+{
+  "author": "Matt Mueller <mattmuelle@gmail.com>",
+  "name": "gh-markdown",
+  "description": "Quick & Dirty github-flavored command-line application",
+  "version": "0.0.1",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "node": "0.4.x"
+  },
+  "bin": {
+    "markdown" : "./bin/markdown"
+  },
+  "dependencies": {
+    "github-flavored-markdown" : "1",
+    "commander" : "0.2.x"
+  },
+  "devDependencies": {}
+}
