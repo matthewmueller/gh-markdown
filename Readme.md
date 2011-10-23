@@ -8,6 +8,11 @@ Compile and merge intro.md, body.md, outro.md then place into index.html:
 
 `markdown intro.md body.md outro.md > index.html`
 
+## Installation
+Install gh-markdown with npm
+
+`npm install -g gh-markdown`
+
 ## License 
 
 (The MIT License)
