@@ -4,9 +4,20 @@ Simple markdown to html command-line tool. Uses github-flavored-markdown.
 
 ## Usage
 
+### Command Line
+
 Compile and merge intro.md, body.md, outro.md then place into index.html:
 
 `markdown intro.md body.md outro.md > index.html`
+
+### Application
+
+``` 
+  var markdown = require('gh-markdown');
+  markdown(["intro.md", "body.md", "outro.md"], function(err, html) {
+    // ...
+  });
+```
 
 ## Installation
 Install gh-markdown with npm
