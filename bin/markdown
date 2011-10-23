@@ -1,54 +1,30 @@
 #!/usr/bin/env node
 
-var fs = require('fs'),
-	program = require('commander'),
-    markdown = require('github-flavored-markdown').parse;
+var program = require('commander'),
+	markdown = require('../');
 
-program.version('0.0.1');
-	
-function countdown(num) {
-	var left = num;
-	return function() {
-		left--;
-		if(left <= 0) {
-			return true;
-		} else {
-			return false;
-		}
-	};
-}
 
-function toKeys(arr) {
-	var out = {};
-	arr.forEach(function(key) {
-		out[key] = "";
-	});
-	return out;
-}
 
-// Defaults
 program
-	.command('*')
-	.action(function() {
-		var files = [].slice.call(arguments),
-			finished = countdown(files.length),
-			out = toKeys(files);
-		
-		files.forEach(function(file) {
-			fs.readFile(file, "utf8", function(err, contents) {
-				var ret = [],
-					md;
-					
-				out[file] = markdown(contents);
-				if(finished()) {
-					for(md in out) {
-						ret.push(out[md]);
-					}
-					console.log(ret.join("\n\n"));
-				}
-			});
-		});
-	});
+	.version('0.0.2');
 	
 program.parse(process.argv);
 	
+
+files = process.argv.slice(2);
+
+// Only parse markdown files.
+files = files.filter(function(file) {
+	var ext = file.split('.').pop();
+	return (ext === "md" || ext === "markdown");
+});
+
+// If we don't have any files
+if(files.length === 0) {
+	console.log("Usage: markdown intro.md body.md outro.md > index.html");
+	return;
+}
+
+markdown(files, function(err, md) {
+	console.log(md);
+});
